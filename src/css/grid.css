@@ -1,0 +1,85 @@
+.amigrid-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	margin: 0;
+	z-index: 1000;
+	display: flex;
+}
+
+.amigrid-overlay-container {
+	height: 100%;
+	width: 100%;
+	max-width: 1040px;
+	display: grid;
+	margin: 0 auto;
+	grid-gap: 16px;
+	grid-template-columns: repeat( 4, [col-start] minmax( 0, 1fr ) );
+}
+
+.amigrid-nav-drawer {
+	width: 0;
+	background-color: rgba(0, 0, 0, .25);
+}
+
+.amigrid-column {
+	background-color: rgba(255, 0, 0, .25);
+}
+
+.amigrid-col-md {
+	display: none;	
+}
+
+.amigrid-col-lg {
+	display: none;	
+}
+
+@media ( max-width: 1280px ){
+	.amigrid-overlay-container {
+		margin: 0 24px;
+	}
+}
+
+@media ( max-width: 660px ){
+	.amigrid-overlay-container {
+		margin: 0 16px;
+	}
+}
+
+@media ( min-width: 661px ){
+	.amigrid-nav-drawer {
+		min-width: 228px;
+		height: 100%;
+	}
+}
+
+@media ( min-width: 961px ){
+	.amigrid-nav-drawer {
+		min-width: 272px;
+		height: 100%;
+	}
+}
+
+@media ( min-width: 660px ){
+	.amigrid-overlay-container {
+		grid-gap: 24px;
+		grid-template-columns: repeat( 8, [col-start] minmax( 0, 1fr ) );
+	}
+
+	.amigrid-col-md {
+		display: block;	
+	}
+}
+
+@media ( min-width: 1040px ){
+	.amigrid-overlay-container {
+		grid-gap: 24px;
+		grid-template-columns: repeat( 12, [col-start] minmax( 0, 1fr ) );
+	}
+
+	.amigrid-col-lg {
+		display: block;	
+	}
+}

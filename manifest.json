@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "Muriel Grid",
+	"description": "A configurable CSS grid overlay, based on the Muriel Design System",
+	"version": "0.1",
+	"author": "Jeff Ong",
+	"background": {
+		"scripts": [
+			"src/background.js"
+		],
+		"persistent": true
+	},
+	"browser_action": {
+		"default_popup": "src/popup.html"
+	},
+	"web_accessible_resources": [
+		"src/css/grid.css",
+		"src/css/popup.css"
+	],
+	"permissions": [
+		"tabs",
+		"http://*/*",
+		"https://*/*",
+		"file://*/*",
+		"storage",
+		"activeTab"
+	]
+}
