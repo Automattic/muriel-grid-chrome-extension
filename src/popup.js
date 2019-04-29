@@ -3,6 +3,7 @@
 window.addEventListener('load', function () {
 
 	const gridToggle = document.getElementById('grid-toggle');
+	const navdrawerToggle = document.getElementById('navdrawer-toggle');
 
 	chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
 
@@ -16,10 +17,8 @@ window.addEventListener('load', function () {
 			chrome.tabs.sendMessage(currentChromeTabId, { method: "toggleGrid", tabId: currentChromeTabId });
 		});
 
-		chrome.storage.local.get('overlay', function(items){
-			if (items.overlay) {
-				gridToggle.checked = true;
-			}
+		navdrawerToggle.addEventListener('click', function(e){
+			chrome.tabs.sendMessage(currentChromeTabId, { method: "toggleNav", tabId: currentChromeTabId });
 		});
 
 	});

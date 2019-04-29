@@ -21,7 +21,12 @@
 
 .amigrid-nav-drawer {
 	width: 0;
+	display: none;
 	background-color: rgba(0, 0, 0, .25);
+}
+
+.show-amigrid-nav-drawer .amigrid-nav-drawer {
+	display: block;
 }
 
 .amigrid-column {
@@ -36,22 +41,38 @@
 	display: none;	
 }
 
-@media ( max-width: 1280px ){
+@media ( max-width: 1358px ){
+	.show-amigrid-nav-drawer .amigrid-overlay-container {
+		margin: 0 24px;
+	}
+}
+
+@media ( max-width: 661px ){
+	.show-amigrid-nav-drawer .amigrid-overlay-container {
+		margin: 0 16px;
+	}
+}
+
+@media ( min-width: 661px ){
 	.amigrid-overlay-container {
 		margin: 0 24px;
+	}
+
+	.amigrid-nav-drawer {
+		min-width: 228px;
+		height: 100%;
+	}
+}
+
+@media ( min-width: 1088px ){
+	.amigrid-overlay-container {
+		margin: 0 auto;
 	}
 }
 
 @media ( max-width: 660px ){
 	.amigrid-overlay-container {
 		margin: 0 16px;
-	}
-}
-
-@media ( min-width: 661px ){
-	.amigrid-nav-drawer {
-		min-width: 228px;
-		height: 100%;
 	}
 }
 
