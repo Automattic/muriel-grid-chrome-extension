@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Muriel Grid",
 	"description": "A responsive grid overlay, based on the Muriel Design System.",
-	"version": "0.1",
+	"version": "0.2",
 	"author": "Jeff Ong",
 	"background": {
 		"scripts": [

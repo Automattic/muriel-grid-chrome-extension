@@ -4,6 +4,7 @@ window.addEventListener('load', function () {
 
 	const gridToggle = document.getElementById('grid-toggle');
 	const navdrawerToggle = document.getElementById('navdrawer-toggle');
+	const wpadminToggle = document.getElementById('wpadmindrawer-toggle');
 
 	chrome.tabs.query({currentWindow: true, active: true}, function (tabs) {
 
@@ -19,6 +20,10 @@ window.addEventListener('load', function () {
 
 		navdrawerToggle.addEventListener('click', function(e){
 			chrome.tabs.sendMessage(currentChromeTabId, { method: "toggleNav", tabId: currentChromeTabId });
+		});
+		
+		wpadminToggle.addEventListener('click', function(e){
+			chrome.tabs.sendMessage(currentChromeTabId, { method: "toggleWpAdmin", tabId: currentChromeTabId });
 		});
 
 	});

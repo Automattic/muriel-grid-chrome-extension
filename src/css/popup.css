@@ -53,6 +53,17 @@ button:hover {
     border-color: #969ca1;
 }
 
+.is-primary {
+	background-color: #d52c82;
+	border-color: #992053;
+	color: #fff;
+}
+
+.is-primary:hover {
+	border-color: #992053;
+	background-color: #ff3997;
+}
+
 h1 {
   font-size: 15px;
 }

@@ -5,7 +5,7 @@
 	right: 0;
 	height: 100%;
 	margin: 0;
-	z-index: 1000;
+	z-index: 10000;
 	display: flex;
 }
 
@@ -22,10 +22,21 @@
 .amigrid-nav-drawer {
 	width: 0;
 	display: none;
-	background-color: rgba(0, 0, 0, .25);
+	background-color: rgba(0, 0, 255, .25);
 }
 
 .show-amigrid-nav-drawer .amigrid-nav-drawer {
+	display: block;
+}
+
+.amigrid-wpadmin-drawer {
+	width: 0;
+	display: none;
+	background-color: rgba(0, 0, 255, .25);
+	z-index: 1000;
+}
+
+.show-wpadmin-drawer .amigrid-wpadmin-drawer {
 	display: block;
 }
 
@@ -47,6 +58,12 @@
 	}
 }
 
+@media ( max-width: 1262px ){
+	.show-wpadmin-drawer .amigrid-overlay-container {
+		margin: 0 24px;
+	}
+}
+
 @media ( max-width: 661px ){
 	.show-amigrid-nav-drawer .amigrid-overlay-container {
 		margin: 0 16px;
@@ -62,6 +79,7 @@
 		min-width: 228px;
 		height: 100%;
 	}
+
 }
 
 @media ( min-width: 1088px ){
@@ -69,6 +87,14 @@
 		margin: 0 auto;
 	}
 }
+
+@media ( min-width: 783px ){
+	.amigrid-wpadmin-drawer {
+		min-width: 36px;
+		height: 100%;
+	}
+}
+
 
 @media ( max-width: 660px ){
 	.amigrid-overlay-container {
@@ -79,6 +105,11 @@
 @media ( min-width: 961px ){
 	.amigrid-nav-drawer {
 		min-width: 272px;
+		height: 100%;
+	}
+
+	.amigrid-wpadmin-drawer {
+		min-width: 160px;
 		height: 100%;
 	}
 }

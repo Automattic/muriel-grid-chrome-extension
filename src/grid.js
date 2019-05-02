@@ -22,7 +22,7 @@
 			container.setAttribute('id', 'amigrid');
 
 			const numColumns = 12;
-			let output = '<div class="amigrid-nav-drawer"></div><div class="amigrid-overlay-container" id="amigrid">';
+			let output = '<div class="amigrid-wpadmin-drawer"></div><div class="amigrid-nav-drawer"></div><div class="amigrid-overlay-container" id="amigrid">';
 
 			for ( let i = 0; i < numColumns; i++ ){
 				if ( i < 4 ){
@@ -59,7 +59,21 @@
 				if( document.getElementById('amigrid').classList.contains('show-amigrid-nav-drawer') ){
 					document.getElementById('amigrid').classList.remove('show-amigrid-nav-drawer');
 				} else {
+					document.getElementById('amigrid').classList.remove('show-wpadmin-drawer');
 					document.getElementById('amigrid').classList.add('show-amigrid-nav-drawer');
+				}
+			}
+		}
+	}
+
+    function toggleWpAdminListener(request, sender, sendResponse) {
+        if (request.method == "toggleWpAdmin") {
+			if ( document.getElementById('amigrid') ){
+				if( document.getElementById('amigrid').classList.contains('show-wpadmin-drawer') ){
+					document.getElementById('amigrid').classList.remove('show-wpadmin-drawer');
+				} else {
+					document.getElementById('amigrid').classList.remove('show-amigrid-nav-drawer');
+					document.getElementById('amigrid').classList.add('show-wpadmin-drawer');
 				}
 			}
 		}
@@ -71,10 +85,12 @@
                 request.method = 'destroy';
                 destroyListener(request, sender, sendResponse);
 				chrome.runtime.onMessage.removeListener(toggleNavListener);
+				chrome.runtime.onMessage.removeListener(toggleWpAdminListener);
             } else {
                 request.method = 'create';
                 createListener(request, sender, sendResponse);
 				chrome.runtime.onMessage.addListener(toggleNavListener);
+				chrome.runtime.onMessage.addListener(toggleWpAdminListener);
             }
         }
     }
